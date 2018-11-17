@@ -7,10 +7,12 @@ const ReactDOM = require('react-dom')
 
 
 // Adding Header 
-const App = () => { 
-    return <div><h1>TO-DO APP</h1><p>What do you need to do next</p></div> 
-}
-ReactDOM.render(<App />, document.querySelector('#todo-head'));
+  const App = () => { 
+      return <div><h1>TO-DO APP</h1><p>What do you need to do next</p></div> 
+  }
+ //const App = React.createElement("h1", {id:"someid"}, "Something new")
+
+ReactDOM.render(<App /> , document.querySelector('#todo-head'));
 
 
 
@@ -58,7 +60,8 @@ var renderTodos = (todos, filter) => {
             const App = () => {
                 return <div>{todo.title} {todo.completed}</div>
             }
-            ReactDOM.render(<App />, document.querySelector('#todos') );
+            ReactDOM.render(<App />
+                , document.querySelector('#todos') );
         
         });
     } else {
@@ -135,6 +138,11 @@ var getSummaryTodo = (incompleteTodo) => {
     ReactDOM.render(<App />, document.querySelector('#todo-summary') );
 }
 
+
+const generateTodoDOM = (todo) => {
+    const todoEl = document.createElement
+}
+
 module.exports = {
     renderTodos, 
     getSavedTodos,
@@ -148,6 +156,9 @@ module.exports = {
 
 /*
 const generateTodoDOM = (todo) => {
+
+// React.createElement --- 
+
     const todoEl = document.createElement('label');
     const containerEl = document.createElement('div');
     const checkEl = document.createElement('input');
