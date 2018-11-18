@@ -13,6 +13,8 @@
     "babel-loader": "^7.1.5",
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
+    "express": "^4.16.4",
+    "hbs": "^4.0.1",
     "live-server": "^1.2.0",
     "moment": "^2.22.2",
     "react": "^16.6.1",
