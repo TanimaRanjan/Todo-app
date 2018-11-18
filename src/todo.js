@@ -8,16 +8,30 @@ const ReactDOM = require('react-dom')
 
 // Adding Header 
   const App = () => { 
-      return <div><h1>TO-DO APP</h1><p>What do you need to do next</p></div> 
+      return  <div> <h1>TO-DO APP</h1>
+        <p>What do you need to do next</p>
+    </div> ;
   }
  //const App = React.createElement("h1", {id:"someid"}, "Something new")
 
 ReactDOM.render(<App /> , document.querySelector('#todo-head'));
 
 
+/************* TEMP  */
+var user = {
+    name:"Tanima",
+    age:36,
+    location:"New York"
+}
+var tempApp = (<div><h2>{user.name}</h2></div>);
+
+ReactDOM.render(tempApp, document.querySelector('#temp'))
+
+
+/************* TEMP  */
 
 // Retrive the Saved Todo to diplay on screen
-var getSavedTodos = () => {
+const getSavedTodos = () => {
     // Get Todo from DB in JSON format
     // Right now get from local storage
     const todosJSON = localStorage.getItem('todos')
@@ -34,7 +48,7 @@ var getSavedTodos = () => {
 // Filter selected - 
 //      Search Text
 //      Hide Completed
-var renderTodos = (todos, filter) => {
+const renderTodos = (todos, filter) => {
     
     console.log("Rendering -- ")
     console.log(` Filter Search ${filter.searchText}`)
@@ -77,7 +91,7 @@ var renderTodos = (todos, filter) => {
    Rerender todo on screen 
    */
 
-var addNewToDo = (todos, newTodoTitle) => {
+  const addNewToDo = (todos, newTodoTitle, filter) => {
     
     //console.log("Adding a new Todo")
     // Push the new title to the todo
@@ -94,7 +108,7 @@ var addNewToDo = (todos, newTodoTitle) => {
 
 
 // Save all the Todo after adding new todo or removing a todo
-var saveTodos = (todos) => {
+const saveTodos = (todos) => {
     console.log("Saving the Todo")
     localStorage.setItem('todos', JSON.stringify(todos))
 
@@ -103,7 +117,7 @@ var saveTodos = (todos) => {
 
 
 // Remove Todo based on passed ID 
-var removeTodo = (id) => {
+const removeTodo = (id) => {
     console.log("Removing a Todo");
     var todos = getSavedTodos();
     const todoIndex = todos.findIndex((todo) => todo.id === id)
@@ -116,7 +130,7 @@ var removeTodo = (id) => {
 
 /* Toggle todo completed flag on selected todo */
 
-var toggleTodo = (id) => {
+const toggleTodo = (id) => {
 
     var todos = getSavedTodos();
     const todo = todos.find((todo) => todo.id === id) 
@@ -127,7 +141,7 @@ var toggleTodo = (id) => {
 }
 
 /* Create summary of all pending todo */
-var getSummaryTodo = (incompleteTodo) => {
+const getSummaryTodo = (incompleteTodo) => {
 
     const plural = incompleteTodo.length > 1 ? 's' : ''
     console.log(`You have ${incompleteTodo.length} todo${plural} left to complete`)

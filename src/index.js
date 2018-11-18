@@ -38,7 +38,7 @@ document.querySelector('#new-todo').addEventListener('submit', (e) => {
         console.log(`Add New Todo ${newtodoEl}`)
         //var newTodoTitle = e.target.elements.newtodo.value
         // Add new Todo when add button is clicked. 
-        todosJS.addNewToDo(todo, newtodoEl)
+        todosJS.addNewToDo(todo, newtodoEl, filter)
     } else {
         console.log(`Nothing to add `)
     }
