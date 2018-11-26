@@ -5,30 +5,14 @@ const moment = require('moment')
 const React = require('react')
 const ReactDOM = require('react-dom')
 
-
 // Adding Header 
   const App = () => { 
       return  <div> <h1>TO-DO APP</h1>
         <p>What do you need to do next</p>
-    </div> ;
+    </div> 
   }
- //const App = React.createElement("h1", {id:"someid"}, "Something new")
+    ReactDOM.render(<App /> , document.querySelector('#todo-head'));
 
-ReactDOM.render(<App /> , document.querySelector('#todo-head'));
-
-
-/************* TEMP  */
-var user = {
-    name:"Tanima",
-    age:36,
-    location:"New York"
-}
-var tempApp = (<div><h2>{user.name}</h2></div>);
-
-ReactDOM.render(tempApp, document.querySelector('#temp'))
-
-
-/************* TEMP  */
 
 // Retrive the Saved Todo to diplay on screen
 const getSavedTodos = () => {
@@ -42,7 +26,6 @@ const getSavedTodos = () => {
     }
     
 }
-
 
 // Render all the todo based on 
 // Filter selected - 

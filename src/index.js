@@ -1,7 +1,6 @@
 
 // Application starts here. It is the initialization file 
 console.log("Starting To Do App")
-
 // const express = require('express')
 // const os = require('os')
 
@@ -22,7 +21,6 @@ const filter = {
     searchText: '',
     hideCompleted: false
 }
-
 
 // Render Notes on Screen 
 // List of the Todo 
