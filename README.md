@@ -1,2 +1,3 @@
 # Todo-app
-Todo application
+Todo application  
+List things to be completed
